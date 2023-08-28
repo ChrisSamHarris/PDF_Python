@@ -3,7 +3,7 @@ import pandas as pd
 import glob 
 from pathlib import Path
 
-filepaths = glob.glob("excel_invoices/*xlsx")
+filepaths = glob.glob("excel_conversion/excel_invoices/*xlsx")
 print(filepaths)
 
 # df_dict = []
@@ -18,7 +18,7 @@ for filepath in filepaths:
     invoice_number = filename[:5]
     pdf.set_font(family="Times", style="B", size=16)
     pdf.cell(w=50, h=8, txt=f"Invoice Number: {invoice_number}", align="L", ln=1, border=0)
-    pdf.output(f"pdf_invoice/test_{invoice_number}.pdf")
+    pdf.output(f"excel_conversion/pdf_invoice/test_{invoice_number}.pdf")
 
 
 # print(df_dict)
